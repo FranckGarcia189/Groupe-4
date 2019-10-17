@@ -92,6 +92,7 @@ function stopAnthem() {
   let item = document.getElementById("text");
   item.style.color = "black";
   soundFile.volume = 0;
+  snowStorm.freeze()
   setTimeout(function () {
      downStaline();
   }, 1);
@@ -105,7 +106,7 @@ function play() {
   soundFile.volume = 1;
   let item = document.getElementById("text")
   item.style.color = "red";
-
+  snowStorm.resume();
   soundFile.play();
 
   setTimeout(function () {
