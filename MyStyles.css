@@ -42,3 +42,15 @@
     font-family:verdana;
     font-size: 12;
 }
+
+#container {
+    width: 100%;
+    position: relative;
+}
+#animate {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: red;
+}

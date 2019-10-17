@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Formulaire </title>
-
-  <link rel="stylesheet" type="text/css" href="MyStyles.css">
+    <title> Formulaire </title>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    <link href="MyStyles.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
 
-  <h1 class="titre"> Back-ground color </h1>
+<h1 class="titre"> Back-ground color </h1>
 
-  <br/>
+<br/>
 
-  <form method="post">
-  <!--
-  <input type="radio" name="rouge">rouge </input><br>
-  <input type="radio" name="bleu"> bleu </input><br>
-  <input type="radio" name="jaune">jaune </input><br>
-  <input type="submit" value="Changer"/>
-  -->
+<form method="post">
+    <!--
+    <input type="radio" name="rouge">rouge </input><br>
+    <input type="radio" name="bleu"> bleu </input><br>
+    <input type="radio" name="jaune">jaune </input><br>
+    <input type="submit" value="Changer"/>
+    -->
     <ul class="list">
-      <li name="1"><a href="#">un</a></li>
+        <li name="1"><a href="#">un</a></li>
 
-      <li name="2"><a href="#">deux</a></li>
+        <li name="2"><a href="#">deux</a></li>
 
-      <li name="3"><a href="#">trois</a></li>
+        <li name="3"><a href="#">trois</a></li>
 
-      <li name="4"><a href="#">quatre</a></li>
+        <li name="4"><a href="#">quatre</a></li>
 
-      <li name="5"><a href="#">cinq</a></li>
+        <li name="5"><a href="#">cinq</a></li>
 
     </ul>
 
-  </form>
+</form>
 
-  <br/>
-  <br/>
+<br/>
+<br/>
 
-  <pre class="texte" id="text">
+<div id="container">
+    <img onclick="play()" class="w3-spin" height="40" id="animate" src="http://a53.idata.over-blog.com/1/11/87/77/coco.gif" width="40">
+</div>
+
+<pre class="texte" id="text">
     Rossia — sviachtchennaïa nacha derjava,
     Rossia — lioubimaïa nacha strana.
     Mogoutchaïa volia, velikaïa slava —
@@ -71,22 +75,62 @@
     Musixmatch.com
   </pre>
 
-  <br/>
+<br/>
 
-  <form class="submit">
-
-
-    <input type="submit" onclick="textBleu(id)">
+<form class="submit">
 
 
+    <input onclick="textBleu(id)" type="submit">
 
-  </form>
 
-  <script>
-  
-  </script>
+</form>
 
-<script src="../fun.js"> </script>
+<script>
+  myMove();
+
+  function myMove() {
+    var elem = document.getElementById("animate");
+    var pos = 0;
+    var id = setInterval(frame, 2);
+    function frame() {
+      if (pos === window.innerWidth) {
+        pos = 0
+      } else {
+        pos++;
+        elem.style.left = pos + "px";
+      }
+    }
+  }
+
+
+  //Create the audio tag
+  var soundFile = document.createElement("audio");
+  soundFile.preload = "auto";
+
+  //Load the sound file (using a source element for expandability)
+  var src = document.createElement("source");
+  src.src = "./soviet-anthem.mp3";
+  soundFile.appendChild(src);
+
+  //Load the audio tag
+  //It auto plays as a fallback
+  soundFile.load();
+  soundFile.volume = 0.000000;
+  soundFile.play();
+
+  //Plays the sound
+  function play() {
+    //Set the current time for the audio file to the beginning
+    soundFile.currentTime = 0.01;
+    soundFile.volume = 1;
+
+    //Due to a bug in Firefox, the audio needs to be played after a delay
+    setTimeout(function(){soundFile.play();},1);
+  }
+</script>
+
+<script src="../fun.js">
+</script>
 
 </body>
 
