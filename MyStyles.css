@@ -1,6 +1,10 @@
 /* Style de formulaire.html */
 
+@font-face {font-family: "Soviet 3D"; src: url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.eot"); src: url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.woff") format("woff"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.svg#Soviet 3D") format("svg"); }
 
+.kremlinFont {
+    font-family: 'Impact'; /*a name to be used later*/
+}
 
 .body {
         background-color:#E3001A;
@@ -38,13 +42,6 @@
     text-decoration: none;
     color: white;
 }
-
-.texte {
-    font-family:verdana;
-    font-size: 12;
-}
-
-
 
 #staline {
     bottom: -600px;
