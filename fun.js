@@ -37,7 +37,8 @@ function myMove() {
 
 function myMoveStaline() {
   var elem = document.getElementById("staline");
-  var pos = -300;
+  var elem2 = document.getElementById("army");
+  var pos = -600;
   var id = setInterval(frame, 2);
 
   function frame() {
@@ -46,6 +47,7 @@ function myMoveStaline() {
     } else {
       pos++;
       elem.style.bottom = pos + 'px';
+      elem2.style.bottom = pos + 'px';
     }
   }
 

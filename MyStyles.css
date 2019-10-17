@@ -1,8 +1,9 @@
 /* Style de formulaire.html */
 
 
+
 .body {
-        background-color:rgb(114, 103, 103);
+        background-color:#E3001A;
         margin:0px;
         padding:0px;
         }
@@ -16,7 +17,7 @@
 .list {
         
         display:inline-block;
-        background-color: grey;
+    background-color: #ae0019;
         margin:0px;
         width:100%;
         list-style-type: none;
@@ -46,15 +47,24 @@
 
 
 #staline {
-    bottom: -300px;
-    position: absolute;
+    bottom: -600px;
+    position: fixed;
 }
+
+#army {
+    right: 0px;
+    bottom: -300px;
+    position: fixed;
+}
+
+
 
 #container {
     width: 100%;
     position: relative;
 }
 #animate {
+    z-index: 10000;
     cursor: pointer;
     width: 100px;
     height: 100px;
