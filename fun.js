@@ -39,29 +39,34 @@ function myMoveStaline() {
   var elem = document.getElementById("staline");
   var elem2 = document.getElementById("army");
   var pos = -600;
-  var id = setInterval(frame, 2);
+  var interUp = setInterval(frame, 2);
 
   function frame() {
-    if (pos === 0) {
-      clearInterval(id);
+    if (pos > 0) {
+      clearInterval(interUp);
     } else {
       pos++;
       elem.style.bottom = pos + 'px';
       elem2.style.bottom = pos + 'px';
     }
   }
+}
 
+function downStaline() {
+  var elem = document.getElementById("staline");
+  var elem2 = document.getElementById("army");
+  var pos = 0;
+  var interDown = setInterval(frame, 2);
 
-  let inter = setInterval(function () {
-    let staline = document.getElementById("staline");
-    let pos = staline.style.bottom;
-    if (pos < 0) {
-      staline.style.bottom = "0px"
+  function frame() {
+    if (pos === -600) {
+      clearInterval(interDown);
     } else {
-      clearInterval(inter)
+      pos--;
+      elem.style.bottom = pos + 'px';
+      elem2.style.bottom = pos + 'px';
     }
-  }, 2);
-
+  }
 }
 
 
@@ -80,19 +85,30 @@ soundFile.load();
 soundFile.volume = 0.000000;
 soundFile.play();
 
+
+function stopAnthem() {
+  let item = document.getElementById("text");
+  item.style.color = "black";
+  soundFile.volume = 0;
+  setTimeout(function () {
+     downStaline();
+  }, 1);
+}
+
+
 //Plays the sound
 function play() {
   //Set the current time for the audio file to the beginning
   soundFile.currentTime = 0.01;
   soundFile.volume = 1;
   let item = document.getElementById("text")
-  item.style.color = item.style.color === "red" ? "black" : "red";
+  item.style.color = "red";
 
   soundFile.play();
 
   setTimeout(function () {
     myMoveStaline();
-  }, 10);
-
+  }, 1);
 }
+
 
