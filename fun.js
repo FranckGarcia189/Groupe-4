@@ -41,7 +41,6 @@ function myMoveStaline() {
   var pos = -600;
   clearInterval(interUp);
   var interUp = setInterval(frame, 2);
-  clearInterval(interDown);
 
   function frame() {
     if (pos > 0) {
@@ -60,10 +59,9 @@ function downStaline() {
   var pos = 0;
   clearInterval(interDown);
   var interDown = setInterval(frame, 2);
-  clearInterval(interUp);
 
   function frame() {
-    if (pos === -600) {
+    if (pos < -600) {
       clearInterval(interDown);
     } else {
       pos--;
@@ -118,3 +116,4 @@ function play() {
 }
 
 snow.start();
+snow.cv.style.display = "none";
