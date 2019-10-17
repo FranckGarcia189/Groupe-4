@@ -1,0 +1,44 @@
+/* Style de formulaire.html */
+
+
+.body {
+        background-color:rgb(114, 103, 103);
+        margin:0px;
+        padding:0px;
+        }
+
+.titre {
+        text-align:center;
+        font-size: 14;
+        font-family: verdana;
+        }   
+
+.list {
+        
+        display:inline-block;
+        background-color: grey;
+        margin:0px;
+        width:100%;
+        list-style-type: none;
+        }  
+
+.list li {
+    float:left;
+    padding:10px;
+    font-size:20px;
+    font-family:verdana;
+}
+
+.list li:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+.list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.texte {
+    font-family:verdana;
+    font-size: 12;
+}
