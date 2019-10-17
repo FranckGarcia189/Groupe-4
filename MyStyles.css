@@ -61,9 +61,10 @@
     width: 100%;
     position: relative;
 }
-#animate {
+#animateCoco {
     z-index: 10000;
     cursor: pointer;
+    display: none;
     width: 100px;
     height: 100px;
     position: absolute;
