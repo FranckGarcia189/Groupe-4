@@ -1,3 +1,4 @@
-function affiche (nb){
- alert(nb)
-}
+function textBleu (id){
+    let item = document.getElementById("text")
+    item.style.color = item.style.color === "blue" ?  "black" : "blue"
+ }
