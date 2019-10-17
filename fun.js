@@ -40,6 +40,7 @@ function myMoveStaline() {
   var elem2 = document.getElementById("army");
   var pos = -600;
   var interUp = setInterval(frame, 2);
+  clearInterval(interDown);
 
   function frame() {
     if (pos > 0) {
@@ -57,6 +58,7 @@ function downStaline() {
   var elem2 = document.getElementById("army");
   var pos = 0;
   var interDown = setInterval(frame, 2);
+  clearInterval(interUp);
 
   function frame() {
     if (pos === -600) {

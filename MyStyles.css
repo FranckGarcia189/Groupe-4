@@ -2,10 +2,6 @@
 
 @font-face {font-family: "Soviet 3D"; src: url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.eot"); src: url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.woff") format("woff"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/cf395921c05083b39e16c7ce2d0510c8.svg#Soviet 3D") format("svg"); }
 
-.kremlinFont {
-    font-family: 'Impact'; /*a name to be used later*/
-}
-
 .body {
         background-color:#E3001A;
         margin:0px;
@@ -15,7 +11,7 @@
 .titre {
         text-align:center;
         font-size: 14;
-        font-family: verdana;
+    font-family: "Soviet 3D";
         }   
 
 .list {
@@ -28,17 +24,22 @@
         }  
 
 .list li {
+    cursor: pointer;
+    font-family: "Soviet 3D";
     float:left;
     padding:10px;
     font-size:20px;
-    font-family:verdana;
 }
 
 .list li:hover {
+    cursor: pointer;
     background-color: rgb(150, 150, 150);
+    font-family: "Soviet 3D";
 }
 
 .list li a {
+    cursor: pointer;
+    font-family: "Soviet 3D";
     text-decoration: none;
     color: white;
 }
