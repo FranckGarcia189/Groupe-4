@@ -2,28 +2,33 @@ myMove();
 
 function myMove() {
   var elem = document.getElementById("animate");
-  var pos = 0;
+  var left = 0;
+  var top = 0;
   var id = setInterval(frame, 2);
   let toRight = true;
 
   function frame() {
     if (toRight) {
-      if (pos === window.innerWidth || pos === window.innerHeight) {
-        pos = window.innerWidth;
-        toRight = !toRight
+      if (top === window.innerHeight) {
+        left = window.innerWidth;
+        top = 0;
+        toRight = false
       } else {
-        pos++;
-        elem.style.left = pos + "px";
-        elem.style.top = pos + "px";
+        left++;
+        top++;
+        elem.style.left = left + "px";
+        elem.style.top = top + "px";
       }
     } else {
-      if (pos === window.innerWidth || pos === window.innerHeight) {
-        pos = 0;
-        toRight = !toRight
+      if (top === window.innerHeight) {
+        left = 0;
+        top = 0;
+        toRight = true
       } else {
-        pos--;
-        elem.style.left = pos + "px";
-        elem.style.top = pos + "px";
+        left--;
+        top++;
+        elem.style.left = left + "px";
+        elem.style.top = top + "px";
       }
     }
 
@@ -45,19 +50,17 @@ function myMoveStaline() {
   }
 
 
-   let inter = setInterval(function () {
-      let staline = document.getElementById("staline");
-      let pos = staline.style.bottom;
-      if (pos < 0) {
-        staline.style.bottom = "0px"
-      } else {
-        clearInterval(inter)
-      }
-    }, 2);
+  let inter = setInterval(function () {
+    let staline = document.getElementById("staline");
+    let pos = staline.style.bottom;
+    if (pos < 0) {
+      staline.style.bottom = "0px"
+    } else {
+      clearInterval(inter)
+    }
+  }, 2);
 
 }
-
-
 
 
 //Create the audio tag
