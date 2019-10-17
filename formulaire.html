@@ -42,7 +42,7 @@
     <img onclick="play()" class="w3-spin" height="40" id="animate" src="http://a53.idata.over-blog.com/1/11/87/77/coco.gif" width="40">
 </div>
 
-<pre class="texte" id="text">
+<pre class="texte" style="text-align: center" id="text">
     Rossia — sviachtchennaïa nacha derjava,
     Rossia — lioubimaïa nacha strana.
     Mogoutchaïa volia, velikaïa slava —
@@ -77,60 +77,8 @@
 
 <br/>
 
-<form class="submit">
 
-
-    <input onclick="textBleu(id)" type="submit">
-
-
-</form>
-
-<script>
-  myMove();
-
-  function myMove() {
-    var elem = document.getElementById("animate");
-    var pos = 0;
-    var id = setInterval(frame, 2);
-    function frame() {
-      if (pos === window.innerWidth) {
-        pos = 0
-      } else {
-        pos++;
-        elem.style.left = pos + "px";
-      }
-    }
-  }
-
-
-  //Create the audio tag
-  var soundFile = document.createElement("audio");
-  soundFile.preload = "auto";
-
-  //Load the sound file (using a source element for expandability)
-  var src = document.createElement("source");
-  src.src = "./soviet-anthem.mp3";
-  soundFile.appendChild(src);
-
-  //Load the audio tag
-  //It auto plays as a fallback
-  soundFile.load();
-  soundFile.volume = 0.000000;
-  soundFile.play();
-
-  //Plays the sound
-  function play() {
-    //Set the current time for the audio file to the beginning
-    soundFile.currentTime = 0.01;
-    soundFile.volume = 1;
-
-    //Due to a bug in Firefox, the audio needs to be played after a delay
-    setTimeout(function(){soundFile.play();},1);
-  }
-</script>
-
-<script src="../fun.js">
-</script>
+<script src="fun.js"> </script>
 
 </body>
 
