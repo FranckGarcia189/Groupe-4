@@ -1,7 +1,7 @@
 myMove();
 
 function myMove() {
-  var elem = document.getElementById("animate");
+  var elem = document.getElementById("animateCoco");
   var left = 0;
   var top = 0;
   var id = setInterval(frame, 2);
@@ -37,29 +37,38 @@ function myMove() {
 
 function myMoveStaline() {
   var elem = document.getElementById("staline");
-  var pos = -300;
-  var id = setInterval(frame, 2);
+  var elem2 = document.getElementById("army");
+  var pos = -600;
+  clearInterval(interUp);
+  var interUp = setInterval(frame, 2);
 
   function frame() {
-    if (pos === 0) {
-      clearInterval(id);
+    if (pos > 0) {
+      clearInterval(interUp);
     } else {
       pos++;
       elem.style.bottom = pos + 'px';
+      elem2.style.bottom = pos + 'px';
     }
   }
+}
 
+function downStaline() {
+  var elem = document.getElementById("staline");
+  var elem2 = document.getElementById("army");
+  var pos = 0;
+  clearInterval(interDown);
+  var interDown = setInterval(frame, 2);
 
-  let inter = setInterval(function () {
-    let staline = document.getElementById("staline");
-    let pos = staline.style.bottom;
-    if (pos < 0) {
-      staline.style.bottom = "0px"
+  function frame() {
+    if (pos < -600) {
+      clearInterval(interDown);
     } else {
-      clearInterval(inter)
+      pos--;
+      elem.style.bottom = pos + 'px';
+      elem2.style.bottom = pos + 'px';
     }
-  }, 2);
-
+  }
 }
 
 
@@ -78,18 +87,39 @@ soundFile.load();
 soundFile.volume = 0.000000;
 soundFile.play();
 
+
+function stopAnthem() {
+  document.getElementById("animateCoco").style.display = "none";
+  let item = document.getElementById("text");
+  item.style.color = "black";
+  soundFile.volume = 0;
+  snow.cv.style.display = "none";
+  setTimeout(function () {
+     downStaline();
+  }, 1);
+}
+
+
 //Plays the sound
 function play() {
+  document.getElementById("animateCoco").style.display = "block";
   //Set the current time for the audio file to the beginning
   soundFile.currentTime = 0.01;
   soundFile.volume = 1;
   let item = document.getElementById("text")
-  item.style.color = item.style.color === "red" ? "black" : "red";
-
+  item.style.color = "red";
+  snow.cv.style.display = "block";
   soundFile.play();
-
   setTimeout(function () {
     myMoveStaline();
+<<<<<<< HEAD
   }, 10);
 
 }
+=======
+  }, 3000);
+}
+
+snow.start();
+snow.cv.style.display = "none";
+>>>>>>> d0bce03eed2579fa28cddcba8deb327826a5f123
